@@ -1,2 +1,7 @@
 node_modules
 .dockerignore
+
+# mongo docker data
+/data/db
+
+.env
