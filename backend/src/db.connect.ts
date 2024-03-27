@@ -12,8 +12,8 @@ const {
     MONGODB_USER,
     MONGODB_PASSWORD,
     MONGODB_DATABASE,
+    MONGODB_INIT_DB,
     MONGODB_LOCAL_PORT,
-
 } = process.env;
 
 // mongoose options
@@ -33,9 +33,9 @@ const options = {
 main().catch(err => console.log(err));
 
 async function main() {
-    
-    // await connect(`mongodb://localhost:${MONGODB_LOCAL_PORT}/${MONGODB_DATABASE}?authSource=admin`, options);
-    await connect(`mongodb://localhost:${MONGODB_LOCAL_PORT}/test?authSource=admin`, options);
+
+    // await connect(`mongodb://localhost:${MONGODB_LOCAL_PORT}/${MONGODB_INIT_DB}?authSource=${MONGODB_DATABASE}`, options);
+    await connect(`mongodb://localhost:${MONGODB_LOCAL_PORT}/test?authSource=${MONGODB_DATABASE}`, options);
 
     const db = mongoose.connection;
     db.on('error', console.error.bind(console, 'Mongodb Connection Error:'));
@@ -54,7 +54,7 @@ async function main() {
 
     console.log("created dumb test user");
     console.log("querying")
-    
+
     const users = await UserModel.find({})
     console.log("users found", users);
 }

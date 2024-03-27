@@ -11,7 +11,7 @@ cp .env.example backend/.env
 
 * `MONGO_INITDB_ROOT_USERNAME` -> DB Username
 * `MONGO_INITDB_ROOT_PASSWORD` -> DB Password
-* `MONGODB_DATABASE` -> DB Name (is not being used yet)
+* `MONGODB_DATABASE` -> Login DB Name
 * `MONGODB_LOCAL_PORT` -> DB public/local port (what well be accessing to)
 * `MONGODB_DOCKER_PORT` -> DB Server port (internal/docker)
 * `NODE_LOCAL_PORT` -> Mongo Express public/local port
@@ -26,7 +26,7 @@ docker compose up -d mongo mongo-express
 
 **Services**
 * `mongo` - runs the mongo db server
-* `mongo-express` - is a Web UI simple admin for the mongo db server
+* `mongo-express` - is a Web UI simple admin for the mongo db server [Mongo Express](http://localhost:8081/)
 
 
 # Front-end
@@ -36,7 +36,7 @@ cd frontent/
 npm i
 npm start
 ```
-then go to [http://localhost:3000](frontend)
+then go to [frontend](http://localhost:3000)
 
 
 # Back-end
