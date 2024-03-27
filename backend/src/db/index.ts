@@ -8,6 +8,7 @@ const {
     MONGODB_USER,
     MONGODB_PASSWORD,
     MONGODB_DATABASE,
+    MONGODB_INIT_DB,
     MONGODB_LOCAL_PORT,
 
 } = process.env;
@@ -20,7 +21,7 @@ const options = {
     pass: MONGODB_PASSWORD,
 };
 
-connect(`mongodb://localhost:${MONGODB_LOCAL_PORT}/${MONGODB_DATABASE}?authSource=admin`, options);
+connect(`mongodb://localhost:${MONGODB_LOCAL_PORT}/${MONGODB_INIT_DB}?authSource=${MONGODB_DATABASE}`, options);
 
 
 const db = mongoose.connection;
